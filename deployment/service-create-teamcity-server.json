@@ -1,0 +1,18 @@
+{
+    "cluster": "acc",
+    "serviceName": "teamcity-server",
+    "taskDefinition": "arn:aws:ecs:eu-west-1:254573840410:task-definition/teamcity-server:1",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-west-1:254573840410:targetgroup/acc-acc-default/60f4bf60e8f84c06",
+            "containerName": "teamcity-server",
+            "containerPort": 8111
+        }
+    ],
+    "desiredCount": 1,
+    "role": "/ecs/acc_ecs_lb_role",
+    "deploymentConfiguration": {
+        "maximumPercent": 100,
+        "minimumHealthyPercent": 0
+    }
+}

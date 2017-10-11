@@ -1,0 +1,23 @@
+{
+  "family": "teamcity-server",
+  "containerDefinitions": [
+    {
+      "name": "teamcity-server",
+      "image": "jetbrains/teamcity-server",
+	  "memory": 128,
+      "portMappings": [
+        {
+          "containerPort": 8111,
+          "protocol": "tcp"
+        }
+      ] ,
+	  "logConfiguration": {
+		  "logDriver": "awslogs",
+		  "options": {
+			  "awslogs-group": "ecs-log-streaming",
+			  "awslogs-region": "eu-west-1"
+		  }
+	  }
+    }
+  ]
+}
